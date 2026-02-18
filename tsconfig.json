@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "module": "ESNext",
+    "moduleResolution": "bundler",
+    "strict": true,
+    "jsx": "preserve",
+    "jsxImportSource": "vue",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "skipLibCheck": true,
+    "noEmit": true,
+    "paths": {
+      "@lulu-ui/components": ["./packages/components/src"]
+    }
+  },
+  "include": ["packages/**/*.ts", "packages/**/*.vue", "docs/**/*.ts", "docs/**/*.vue"],
+  "exclude": ["node_modules", "dist"]
+}
