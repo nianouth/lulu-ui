@@ -12,6 +12,22 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuButton type="primary" @click="visible = true">打开对话框</LuButton>
+  <LuModal v-model="visible" title="基础对话框">
+    <p>这是一段对话框的内容。你可以在这里放置任何信息。</p>
+  </LuModal>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const visible = ref(false)
+</script>
+```
+:::
+
 <LuModal v-model="visible1" title="基础对话框">
   <p>这是一段对话框的内容。你可以在这里放置任何信息。</p>
 </LuModal>
@@ -25,6 +41,26 @@
   <LuButton type="primary" @click="visible2 = true">带 Footer 的对话框</LuButton>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuButton type="primary" @click="visible = true">带 Footer 的对话框</LuButton>
+  <LuModal v-model="visible" title="确认操作">
+    <p>确定要执行此操作吗？此操作不可撤销。</p>
+    <template #footer>
+      <LuButton @click="visible = false">取消</LuButton>
+      <LuButton type="primary" @click="visible = false">确定</LuButton>
+    </template>
+  </LuModal>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const visible = ref(false)
+</script>
+```
+:::
 
 <LuModal v-model="visible2" title="确认操作">
   <p>确定要执行此操作吗？此操作不可撤销。</p>

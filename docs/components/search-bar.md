@@ -16,6 +16,34 @@
 <p style="margin-top: 12px; color: #666;">当前输入：{{ keyword }}</p>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuSearchBar
+    v-model="keyword"
+    placeholder="请输入搜索关键词"
+    @search="handleSearch"
+    @clear="handleClear"
+  />
+  <p style="margin-top: 12px; color: #666;">当前输入：{{ keyword }}</p>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const keyword = ref('')
+
+const handleSearch = (value) => {
+  alert('搜索关键词：' + value)
+}
+
+const handleClear = () => {
+  console.log('搜索内容已清除')
+}
+</script>
+```
+:::
+
 <script setup>
 import { ref } from 'vue'
 

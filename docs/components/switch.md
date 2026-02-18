@@ -12,6 +12,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuSwitch v-model="value" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const value = ref(false)
+</script>
+```
+:::
+
 ## 带标签
 
 通过默认插槽可以为开关添加文字描述。
@@ -25,6 +38,21 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuSwitch v-model="value1">自动保存</LuSwitch>
+  <LuSwitch v-model="value2">开启通知</LuSwitch>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const value1 = ref(true)
+const value2 = ref(false)
+</script>
+```
+:::
+
 ## 禁用状态
 
 设置 `disabled` 属性可以使开关处于不可用状态。
@@ -35,6 +63,21 @@
   <LuSwitch v-model="value5" disabled>已禁用</LuSwitch>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuSwitch v-model="value1" disabled />
+  <LuSwitch v-model="value2" disabled>已禁用</LuSwitch>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const value1 = ref(false)
+const value2 = ref(true)
+</script>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'

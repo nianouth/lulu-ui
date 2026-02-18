@@ -13,6 +13,31 @@
 />
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuLoginForm
+    title="用户登录"
+    @submit="handleSubmit"
+  />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const handleSubmit = ({ username, password, done }) => {
+  console.log('用户名:', username)
+  console.log('密码:', password)
+  // 模拟异步请求，2 秒后完成
+  setTimeout(() => {
+    done()
+    alert(`登录信息：用户名=${username}，密码=${password}`)
+  }, 2000)
+}
+</script>
+```
+:::
+
 <script setup>
 import { ref } from 'vue'
 

@@ -20,6 +20,22 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuBadge :value="5">
+    <LuButton>消息</LuButton>
+  </LuBadge>
+  <LuBadge :value="12">
+    <LuButton>评论</LuButton>
+  </LuBadge>
+  <LuBadge value="new">
+    <LuButton>新功能</LuButton>
+  </LuBadge>
+</template>
+```
+:::
+
 ## 小红点
 
 设置 `isDot` 属性可以将徽标显示为一个小红点，用于未读消息等不需要显示具体数量的场景。
@@ -35,6 +51,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuBadge isDot>
+    <LuButton>消息</LuButton>
+  </LuBadge>
+  <LuBadge isDot>
+    <LuButton>通知</LuButton>
+  </LuBadge>
+</template>
+```
+:::
+
 ## 最大值
 
 设置 `max` 属性可以限制徽标数值的最大显示值。当 `value` 超过 `max` 时显示 `{max}+`。
@@ -49,6 +78,19 @@
   </LuBadge>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuBadge :value="200" :max="99">
+    <LuButton>消息</LuButton>
+  </LuBadge>
+  <LuBadge :value="50" :max="10">
+    <LuButton>评论</LuButton>
+  </LuBadge>
+</template>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'

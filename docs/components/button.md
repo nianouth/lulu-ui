@@ -17,6 +17,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuButton>默认按钮</LuButton>
+  <LuButton type="primary">主要按钮</LuButton>
+  <LuButton type="success">成功按钮</LuButton>
+  <LuButton type="warning">警告按钮</LuButton>
+  <LuButton type="danger">危险按钮</LuButton>
+  <LuButton type="info">信息按钮</LuButton>
+</template>
+```
+:::
+
 ## 朴素按钮
 
 设置 `plain` 属性可以显示朴素样式的按钮，背景色更浅、更轻量。
@@ -31,6 +44,19 @@
   <LuButton type="info" plain>信息按钮</LuButton>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuButton plain>朴素按钮</LuButton>
+  <LuButton type="primary" plain>主要按钮</LuButton>
+  <LuButton type="success" plain>成功按钮</LuButton>
+  <LuButton type="warning" plain>警告按钮</LuButton>
+  <LuButton type="danger" plain>危险按钮</LuButton>
+  <LuButton type="info" plain>信息按钮</LuButton>
+</template>
+```
+:::
 
 ## 圆角按钮
 
@@ -47,6 +73,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuButton round>圆角按钮</LuButton>
+  <LuButton type="primary" round>主要按钮</LuButton>
+  <LuButton type="success" round>成功按钮</LuButton>
+  <LuButton type="warning" round>警告按钮</LuButton>
+  <LuButton type="danger" round>危险按钮</LuButton>
+  <LuButton type="info" round>信息按钮</LuButton>
+</template>
+```
+:::
+
 ## 不同尺寸
 
 使用 `size` 属性来控制按钮的大小，支持 `small`、`default`、`large` 三种尺寸。
@@ -58,6 +97,16 @@
   <LuButton type="primary" size="large">大型按钮</LuButton>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuButton type="primary" size="small">小型按钮</LuButton>
+  <LuButton type="primary">默认按钮</LuButton>
+  <LuButton type="primary" size="large">大型按钮</LuButton>
+</template>
+```
+:::
 
 ## 禁用状态
 
@@ -73,6 +122,18 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuButton disabled>禁用按钮</LuButton>
+  <LuButton type="primary" disabled>主要按钮</LuButton>
+  <LuButton type="success" disabled>成功按钮</LuButton>
+  <LuButton type="warning" disabled>警告按钮</LuButton>
+  <LuButton type="danger" disabled>危险按钮</LuButton>
+</template>
+```
+:::
+
 ## 加载状态
 
 设置 `loading` 属性可以让按钮显示加载中的状态，此时按钮不可点击。
@@ -83,6 +144,20 @@
   <LuButton type="success" loading>加载中</LuButton>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuButton type="primary" :loading="loading" @click="loading = true">点击加载</LuButton>
+  <LuButton type="success" loading>加载中</LuButton>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const loading = ref(false)
+</script>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'

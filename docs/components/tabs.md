@@ -14,6 +14,29 @@
 </LuTabs>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuTabs v-model="activeTab" :tabs="tabList">
+    <div v-if="activeTab === 'user'">用户管理的内容区域</div>
+    <div v-if="activeTab === 'role'">角色管理的内容区域</div>
+    <div v-if="activeTab === 'permission'">权限设置的内容区域</div>
+  </LuTabs>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const activeTab = ref('user')
+const tabList = ref([
+  { name: 'user', label: '用户管理' },
+  { name: 'role', label: '角色管理' },
+  { name: 'permission', label: '权限设置' },
+])
+</script>
+```
+:::
+
 <script setup>
 import { ref } from 'vue'
 

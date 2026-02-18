@@ -13,6 +13,28 @@
 <p style="margin-top: 8px; color: #666; font-size: 14px;">当前选中：{{ value1 || '无' }}</p>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuSelect v-model="value" :options="options" placeholder="请选择" />
+  <p>当前选中：{{ value || '无' }}</p>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const value = ref('')
+const options = ref([
+  { label: '苹果', value: 'apple' },
+  { label: '香蕉', value: 'banana' },
+  { label: '橘子', value: 'orange' },
+  { label: '葡萄', value: 'grape' },
+  { label: '西瓜', value: 'watermelon' },
+])
+</script>
+```
+:::
+
 ## 禁用状态
 
 设置 `disabled` 属性可以使选择器处于不可用状态。
@@ -22,6 +44,27 @@
   <LuSelect v-model="value2" :options="options1" placeholder="禁用状态" disabled />
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuSelect v-model="value" :options="options" placeholder="禁用状态" disabled />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const value = ref('apple')
+const options = ref([
+  { label: '苹果', value: 'apple' },
+  { label: '香蕉', value: 'banana' },
+  { label: '橘子', value: 'orange' },
+  { label: '葡萄', value: 'grape' },
+  { label: '西瓜', value: 'watermelon' },
+])
+</script>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'

@@ -10,6 +10,31 @@
 <LuTable :columns="columns" :data="tableData" />
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuTable :columns="columns" :data="tableData" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const columns = ref([
+  { key: 'name', title: '姓名', width: '120px' },
+  { key: 'age', title: '年龄', width: '80px' },
+  { key: 'address', title: '地址' },
+])
+
+const tableData = ref([
+  { name: '张三', age: 28, address: '北京市朝阳区' },
+  { name: '李四', age: 32, address: '上海市浦东新区' },
+  { name: '王五', age: 25, address: '广州市天河区' },
+  { name: '赵六', age: 30, address: '深圳市南山区' },
+])
+</script>
+```
+:::
+
 ## 带斑马纹
 
 设置 `striped` 属性可以创建带有斑马纹的表格，便于区分不同行的数据。
@@ -18,6 +43,31 @@
 <LuTable :columns="columns" :data="tableData" striped />
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuTable :columns="columns" :data="tableData" striped />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const columns = ref([
+  { key: 'name', title: '姓名', width: '120px' },
+  { key: 'age', title: '年龄', width: '80px' },
+  { key: 'address', title: '地址' },
+])
+
+const tableData = ref([
+  { name: '张三', age: 28, address: '北京市朝阳区' },
+  { name: '李四', age: 32, address: '上海市浦东新区' },
+  { name: '王五', age: 25, address: '广州市天河区' },
+  { name: '赵六', age: 30, address: '深圳市南山区' },
+])
+</script>
+```
+:::
+
 ## 带边框
 
 设置 `bordered` 属性可以为表格添加纵向边框。
@@ -25,6 +75,31 @@
 <div class="demo-block">
 <LuTable :columns="columns" :data="tableData" bordered />
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuTable :columns="columns" :data="tableData" bordered />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const columns = ref([
+  { key: 'name', title: '姓名', width: '120px' },
+  { key: 'age', title: '年龄', width: '80px' },
+  { key: 'address', title: '地址' },
+])
+
+const tableData = ref([
+  { name: '张三', age: 28, address: '北京市朝阳区' },
+  { name: '李四', age: 32, address: '上海市浦东新区' },
+  { name: '王五', age: 25, address: '广州市天河区' },
+  { name: '赵六', age: 30, address: '深圳市南山区' },
+])
+</script>
+```
+:::
 
 ## 自定义列插槽
 
@@ -41,6 +116,40 @@
   </template>
 </LuTable>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuTable :columns="columns" :data="tableData">
+    <template #status="{ row }">
+      <LuTag :type="row.status === '已完成' ? 'success' : 'warning'">{{ row.status }}</LuTag>
+    </template>
+    <template #action="{ row }">
+      <LuButton type="primary" size="small">编辑</LuButton>
+      <LuButton type="danger" size="small">删除</LuButton>
+    </template>
+  </LuTable>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const columns = ref([
+  { key: 'name', title: '姓名', width: '120px' },
+  { key: 'status', title: '状态', width: '100px' },
+  { key: 'address', title: '地址' },
+  { key: 'action', title: '操作', width: '180px' },
+])
+
+const tableData = ref([
+  { name: '张三', address: '北京市朝阳区', status: '已完成' },
+  { name: '李四', address: '上海市浦东新区', status: '进行中' },
+  { name: '王五', address: '广州市天河区', status: '已完成' },
+  { name: '赵六', address: '深圳市南山区', status: '进行中' },
+])
+</script>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'

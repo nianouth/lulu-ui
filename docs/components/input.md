@@ -12,6 +12,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuInput v-model="input" placeholder="请输入内容" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const input = ref('')
+</script>
+```
+:::
+
 ## 可清除
 
 设置 `clearable` 属性可以在输入框有内容时显示清除按钮。
@@ -22,6 +35,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuInput v-model="input" placeholder="可清除输入框" clearable />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const input = ref('可清除的内容')
+</script>
+```
+:::
+
 ## 禁用状态
 
 设置 `disabled` 属性可以使输入框处于不可用状态。
@@ -31,6 +57,19 @@
   <LuInput v-model="input3" placeholder="禁用状态" disabled />
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuInput v-model="input" placeholder="禁用状态" disabled />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const input = ref('禁用的输入框')
+</script>
+```
+:::
 
 ## 不同尺寸
 
@@ -47,6 +86,23 @@
   <LuInput v-model="input6" placeholder="大型输入框" size="large" />
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuInput v-model="input1" placeholder="小型输入框" size="small" />
+  <LuInput v-model="input2" placeholder="默认输入框" />
+  <LuInput v-model="input3" placeholder="大型输入框" size="large" />
+</template>
+
+<script setup>
+import { ref } from 'vue'
+const input1 = ref('')
+const input2 = ref('')
+const input3 = ref('')
+</script>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'

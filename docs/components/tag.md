@@ -17,6 +17,19 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuTag>默认标签</LuTag>
+  <LuTag type="primary">主要标签</LuTag>
+  <LuTag type="success">成功标签</LuTag>
+  <LuTag type="warning">警告标签</LuTag>
+  <LuTag type="danger">危险标签</LuTag>
+  <LuTag type="info">信息标签</LuTag>
+</template>
+```
+:::
+
 ## 不同尺寸
 
 使用 `size` 属性来控制标签的大小。
@@ -29,6 +42,16 @@
 </div>
 </div>
 
+::: details 查看代码
+```vue
+<template>
+  <LuTag type="primary" size="small">小型标签</LuTag>
+  <LuTag type="primary">默认标签</LuTag>
+  <LuTag type="primary" size="large">大型标签</LuTag>
+</template>
+```
+:::
+
 ## 可关闭标签
 
 设置 `closable` 属性可以使标签显示关闭按钮。关闭时会触发 `close` 事件。
@@ -40,6 +63,31 @@
   </LuTag>
 </div>
 </div>
+
+::: details 查看代码
+```vue
+<template>
+  <LuTag v-for="tag in tags" :key="tag.name" :type="tag.type" closable @close="handleClose(tag)">
+    {{ tag.name }}
+  </LuTag>
+</template>
+
+<script setup>
+import { ref } from 'vue'
+
+const tags = ref([
+  { name: '标签一', type: 'primary' },
+  { name: '标签二', type: 'success' },
+  { name: '标签三', type: 'warning' },
+  { name: '标签四', type: 'danger' },
+])
+
+const handleClose = (tag) => {
+  tags.value = tags.value.filter(t => t !== tag)
+}
+</script>
+```
+:::
 
 <script setup>
 import { ref } from 'vue'
